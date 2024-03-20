@@ -1,7 +1,8 @@
+import css from "./Feedback.module.css";
 const Feedback = ({ counterNumber, total, positiveFeedback }) => {
   return (
     <div>
-      <ul>
+      <ul className={css.feedback}>
         <li>Good: {counterNumber.good}</li>
         <li>Neutral: {counterNumber.neutral}</li>
         <li>Bad: {counterNumber.bad}</li>

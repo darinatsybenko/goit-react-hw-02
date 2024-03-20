@@ -3,7 +3,7 @@ import Description from "../Description/Description";
 import Feedback from "../Feedback/Feedback";
 import Options from "../Options/Options";
 import Notification from "../Notification/Notification";
-
+import css from "./App.module.css";
 const App = () => {
   const ititialFeedback = { good: 0, neutral: 0, bad: 0 };
   const [counterNumber, setCounterNumber] = useState(() => {
@@ -29,10 +29,10 @@ const App = () => {
     ((counterNumber.good + counterNumber.neutral) / totalFeedback) * 100
   );
   useEffect(() => {
-    localStorage.setIrem("feedback", JSON.stringify(counterNumber));
+    localStorage.setItem("feedback", JSON.stringify(counterNumber));
   }, [counterNumber]);
   return (
-    <div>
+    <div className={css.container}>
       <Description />
       <Options
         totalFeedback={totalFeedback}
